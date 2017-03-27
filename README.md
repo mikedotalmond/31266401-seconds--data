@@ -12,6 +12,10 @@ See [mikedotalmond.co.uk/projects/31266401-seconds](http://mikedotalmond.co.uk/p
 
 ### Data format
 
+Each day of data consists of a `status` and `delete` array with 86400 (60 x 60 x 24) entries each. Errors and server downtime are recorded as `-1` in the outputs, otherwise the values within the arrays should be positive integers.
+
+Days start at 00:00:00 UTC and end with 23:59:59 UTC (no timezone offsets)
+
 ```json
 {
   "error":"",
@@ -37,7 +41,3 @@ typedef BufferData = {
  var delete:Array<Int>;
 }
 ```
-
-Each day of data consists of a `status` and `delete` array with 86400 (60 x 60 x 24) entries each. Errors and server downtime are recorded as `-1` in the outputs, otherwise the values within the arrays should be positive integers.
-
-Days start at 00:00:00 UTC and end with 23:59:59 UTC (no timezone offsets)
